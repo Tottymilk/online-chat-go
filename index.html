@@ -8,7 +8,7 @@
         <h1>ЧАТ</h1>
         <form hx-post="/sendMessage" hx-target="#chat-box" hx-swap="beforeend" >
             <input type="text" name="user-message" id="user-message" required>
-            <input type="submit" value="send" onClick="location.reload(true)">
+            <input type="submit" value="send" hx-trigger="throttle:3" onClick="location.reload(true)">
         </form>
         <div name="chat-box" id="chat-box" style="height: 1000px; width: 200px; border:3px;border-color: white; border-style: solid;">
             {{ range . }}
