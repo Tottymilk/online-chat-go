@@ -3,11 +3,20 @@ package api
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 )
 
 func (s *Server) mainPage(w http.ResponseWriter, r *http.Request) {
-	tmpl, _ := template.New("index.html").ParseFiles("index.html")
+	tmpl, err := template.ParseFiles("./web/html/index.html")
+	if err != nil {
+		log.Fatal("oops", err)
+	}
+	tmpl.Execute(w, nil)
+}
+
+func (s *Server) aboutPage(w http.ResponseWriter, r *http.Request) {
+	tmpl, _ := template.ParseFiles("./web/html/about.html")
 	tmpl.Execute(w, nil)
 }
 
