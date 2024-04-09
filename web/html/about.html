@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+        <title>about chat</title>
+    </head>
+    <body style="background-color: black;color: white;">
+        <h1>
+            В нашем динамично меняющемся мире связь и обмен информацией 
+            становятся все более важными. Онлайн-чат предоставляет возможность 
+            людям из разных уголков мира общаться в реальном времени, делиться мнениями, 
+            идеями и опытом. Онлайн-чат может стать платформой для создания сообщества единомышленников, 
+            объединенных общими интересами. Это может быть как место для неформального общения, 
+            так и площадка для профессионального роста и развития.
+        </h1><br>
+        <h2>Оставить отзыв</h2>
+        <form hx-post="/sendFeedback">
+            <input type="text" name="user-feedback" id="user-feedback" required>
+            <input type="submit" value="sendfeed">
+        </form>
+    </body>
+</html>
