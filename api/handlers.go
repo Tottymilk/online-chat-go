@@ -3,15 +3,14 @@ package api
 import (
 	"fmt"
 	"html/template"
-	"log"
 	"net/http"
+	"sync"
+
+	"golang.org/x/net/websocket"
 )
 
 func (s *Server) mainPage(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("./web/html/index.html")
-	if err != nil {
-		log.Fatal("oops", err)
-	}
+	tmpl, _ := template.ParseFiles("./web/html/index.html")
 	tmpl.Execute(w, nil)
 }
 
@@ -25,4 +24,15 @@ func (s *Server) sendMessage(w http.ResponseWriter, r *http.Request) {
 	fmt.Print(message)
 	//allMessages = append(allMessages, message)
 
+}
+
+func (s *Server) HandleWS(ws *websocket.Conn) {
+	var mutex sync.Mutex
+	fmt.Println("new conn from client:", ws.RemoteAddr())
+
+	mutex.Lock()
+	s.conns[ws] = true
+	mutex.Unlock()
+
+	s.readLoop(ws)
 }
