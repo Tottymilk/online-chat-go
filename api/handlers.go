@@ -10,19 +10,18 @@ import (
 )
 
 func (s *Server) mainPage(w http.ResponseWriter, r *http.Request) {
-	tmpl, _ := template.ParseFiles("./web/html/index.html")
+	tmpl, _ := template.ParseFiles("./static/html/index.html")
 	tmpl.Execute(w, nil)
 }
 
 func (s *Server) aboutPage(w http.ResponseWriter, r *http.Request) {
-	tmpl, _ := template.ParseFiles("./web/html/about.html")
+	tmpl, _ := template.ParseFiles("./static/html/about.html")
 	tmpl.Execute(w, nil)
 }
 
 func (s *Server) sendMessage(w http.ResponseWriter, r *http.Request) {
 	message := fmt.Sprintf("%s\n", r.PostFormValue("user-message"))
 	fmt.Print(message)
-	//allMessages = append(allMessages, message)
 
 }
 

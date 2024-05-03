@@ -49,6 +49,7 @@ func (s *Server) broadcast(b []byte) {
 
 func (s *Server) Start() error {
 	router := mux.NewRouter()
+	router.Handle("/static/", http.StripPrefix("/static", http.FileServer(http.Dir("/static/"))))
 	router.HandleFunc("/", s.mainPage)
 	router.HandleFunc("/about", s.aboutPage)
 	router.HandleFunc("/sendMessage", s.sendMessage).Methods("post")
