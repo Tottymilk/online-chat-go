@@ -1,4 +1,6 @@
 github.com/gorilla/mux v1.8.1 h1:TuBL49tXwgrFYWhqrNgrUNEY92u81SPhu7sTdzQEiWY=
 github.com/gorilla/mux v1.8.1/go.mod h1:AKf9I4AEqPTmMytcMc0KkNouC66V3BtZ4qD5fmWSiMQ=
+github.com/nkovacs/go.rice v0.0.0-20220728142416-31c93e116699 h1:liWrc750jxVYlcuoFoJEch3kkaFXsmPomBDh11FRL3E=
+github.com/nkovacs/go.rice v0.0.0-20220728142416-31c93e116699/go.mod h1:v2ED4zS/p/rX+HNeDlrykN6BFlKo4bRiDuCLpStWhOQ=
 golang.org/x/net v0.24.0 h1:1PcaxkF854Fu3+lvBIx5SYn9wRlBzzcnHZSiaFFAb0w=
 golang.org/x/net v0.24.0/go.mod h1:2Q7sJY5mzlzWjKtYUEXSlBWCdyaioyXzRB2RtU8KVE8=

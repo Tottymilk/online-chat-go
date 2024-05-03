@@ -49,10 +49,10 @@ func (s *Server) broadcast(b []byte) {
 
 func (s *Server) Start() error {
 	router := mux.NewRouter()
-	router.Handle("/static/", http.StripPrefix("/static", http.FileServer(http.Dir("/static/"))))
 	router.HandleFunc("/", s.mainPage)
 	router.HandleFunc("/about", s.aboutPage)
 	router.HandleFunc("/sendMessage", s.sendMessage).Methods("post")
+	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	router.Handle("/ws", websocket.Handler(s.HandleWS))
 	return (http.ListenAndServe(s.listenAdress, router))
 }
