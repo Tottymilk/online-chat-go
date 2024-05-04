@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://unpkg.com/htmx.org@1.9.11"></script>
         <script defer type="text/javascript" src="http://localhost:8085/static/js/websockets.js"></script>
-        <title>online chat site</title>
+        <link rel="stylesheet" href="http://localhost:8085/static/css/main.css">
+        <title>Online Chat</title>
     </head>
-    <body style="background-color: black;color: white;">
-        <h1>ЧАТ</h1><span style="text-align: right;"><a href="http://localhost:8085/about">about</a></span>
-        <form hx-post="/sendMessage" hx-target="#chat-box" hx-swap="beforeend" >
+    <body>
+        <h1>ЧАТ</h1>
+        <a href="http://localhost:8085/about">about</a>
+        <form hx-post="/sendMessage" id="send-message-form">
             <input type="text" name="user-message" id="user-message" required>
             <input type="submit" value="send" id="send-message">
         </form>
-        <div name="chat-box" id="chat-box" style="height: 1000px; width: 200px; border:3px;border-color: white; border-style: solid;">
-            
-        </div>
+        <div name="chat-box" id="chat-box"></div>
     </body>
 </html>

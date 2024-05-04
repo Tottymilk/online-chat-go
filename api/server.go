@@ -42,7 +42,7 @@ func (s *Server) broadcast(b []byte) {
 		if s.conns[ws] == true {
 			go func(ws *websocket.Conn) {
 				if _, err := ws.Write(b); err != nil {
-					fmt.Println("write error: ", err)
+					fmt.Println("write error: user disconnected")
 					s.conns[ws] = false
 				}
 			}(ws)
@@ -54,7 +54,7 @@ func (s *Server) Start() error {
 	router := mux.NewRouter()
 	router.HandleFunc("/", s.mainPage)
 	router.HandleFunc("/about", s.aboutPage)
-	router.HandleFunc("/sendMessage", s.sendMessage).Methods("post")
+	router.HandleFunc("/sendMessage", s.sendMessage)
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	router.Handle("/ws", websocket.Handler(s.HandleWS))
 	return (http.ListenAndServe(s.listenAdress, router))
