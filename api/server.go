@@ -39,11 +39,14 @@ func (s *Server) readLoop(ws *websocket.Conn) {
 
 func (s *Server) broadcast(b []byte) {
 	for ws := range s.conns {
-		go func(ws *websocket.Conn) {
-			if _, err := ws.Write(b); err != nil {
-				fmt.Println("write error: ", err)
-			}
-		}(ws)
+		if s.conns[ws] == true {
+			go func(ws *websocket.Conn) {
+				if _, err := ws.Write(b); err != nil {
+					fmt.Println("write error: ", err)
+					s.conns[ws] = false
+				}
+			}(ws)
+		}
 	}
 }
 

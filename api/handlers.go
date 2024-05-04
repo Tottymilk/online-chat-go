@@ -22,7 +22,6 @@ func (s *Server) aboutPage(w http.ResponseWriter, r *http.Request) {
 func (s *Server) sendMessage(w http.ResponseWriter, r *http.Request) {
 	message := fmt.Sprintf("%s\n", r.PostFormValue("user-message"))
 	fmt.Print(message)
-
 }
 
 func (s *Server) HandleWS(ws *websocket.Conn) {
