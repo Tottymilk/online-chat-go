@@ -39,7 +39,7 @@ func (s *Server) readLoop(ws *websocket.Conn) {
 
 func (s *Server) broadcast(b []byte) {
 	for ws := range s.conns {
-		if s.conns[ws] {
+		if s.conns[ws] == true {
 			go func(ws *websocket.Conn) {
 				if _, err := ws.Write(b); err != nil {
 					fmt.Println("write error: user disconnected")
@@ -54,7 +54,7 @@ func (s *Server) Start() error {
 	router := mux.NewRouter()
 	router.HandleFunc("/", s.mainPage)
 	router.HandleFunc("/about", s.aboutPage)
-	router.HandleFunc("/sendMessage", s.sendMessage).Methods("POST")
+	router.HandleFunc("/sendMessage", s.sendMessage)
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	router.Handle("/ws", websocket.Handler(s.HandleWS))
 	return (http.ListenAndServe(s.listenAdress, router))
