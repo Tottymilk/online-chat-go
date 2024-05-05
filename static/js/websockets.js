@@ -1,5 +1,6 @@
 let clientWS = new WebSocket("ws://localhost:8085/ws")
 
+
 clientWS.onopen = () => {
     clientWS.send("yay somebody joined :)")
 }
@@ -11,6 +12,7 @@ clientWS.onmessage = (event) => {
 
 window.addEventListener('beforeunload', () => {
     clientWS.send("somebody just left :(")
+    clientWS.close()
 })
 
 var chat_box = document.getElementById("chat-box")
