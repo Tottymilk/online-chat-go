@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://unpkg.com/htmx.org@1.9.12"></script>
         <script defer type="text/javascript" src="http://localhost:8085/static/js/websockets.js"></script>
         <link rel="stylesheet" href="http://localhost:8085/static/css/main.css">
         <title>Online Chat</title>
@@ -8,7 +9,7 @@
     <body>
         <h1>ЧАТ</h1>
         <a href="http://localhost:8085/about">about</a>
-        <form hx-post="/sendMessage" id="send-message-form">
+        <form hx-post="/sendMessage" id="send-message-form" hx-swap="none">
             <input type="text" name="user-message" id="user-message" required>
             <input type="submit" value="send" id="send-message">
         </form>
