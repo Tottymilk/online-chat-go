@@ -10,7 +10,7 @@ import (
 )
 
 func (s *Server) mainPage(w http.ResponseWriter, r *http.Request) {
-	tmpl, _ := template.ParseFiles("./static/html/index.html")
+	tmpl, _ := template.ParseFiles("./static/html/main.html")
 	tmpl.Execute(w, nil)
 }
 

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --title: Inter;
+  
+    /* font sizes */
+    --body-text-size: 20px;
+    --small-text-size: 16px;
+    --title-size: 64px;
+  
+    /* Colors */
+    --color-white: #fff;
+    --color-black: #000;
+  
+    /* Paddings */
+    --padding-21xl: 40px;
+  
+    /* Border radiuses */
+    --br-5xs: 8px;
+  
+    /* Effects */
+    --button-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  }

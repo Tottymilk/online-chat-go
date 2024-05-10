@@ -1,48 +1,168 @@
-body {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    font-family: 'Roboto', sans-serif;
+.chatify {
+    position: relative;
+    line-height: 150%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 70px;
+  }
+  .chatify-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-h1 {
-    text-align: center;
-    max-width: 800px;
-    line-height: 1.5;
-}
-h2 {
-    text-align: center;
-    margin-top: 50px;
-}
-form {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 11px 0 0;
+  }
+  .div {
+    position: relative;
+    font-size: var(--small-text-size);
+    line-height: 150%;
+    font-weight: 500;
+    font-family: var(--title);
+    color: var(--color-white);
+    text-align: left;
+    display: inline-block;
+    min-width: 47px;
+  }
+  .button,
+  .frame-parent {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-}
-input[type="submit"] {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 0 5px 5px 0;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .button {
     cursor: pointer;
-    background-color: #34495e;
-    color: #ecf0f1;
-    transition: transform 0.3s ease;
-}
-input[type="submit"]:hover {
-    transform: scale(1.1);
-}
-input[type="submit"]:active {
-    transform: scale(0.9);
+    border: 0;
+    padding: 14px 24px;
+    background-color: var(--color-black);
+    box-shadow: var(--button-shadow);
+    border-radius: var(--br-5xs);
+    justify-content: flex-start;
+    white-space: nowrap;
+  }
+  .button:hover {
+    background-color: #333;
+  }
+  .frame-parent {
+    align-self: stretch;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .h1,
+  .paragraph {
+    position: relative;
+  }
+  .h1 {
+    margin: 0;
+    align-self: stretch;
+    font-size: inherit;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-family: inherit;
+  }
+  .paragraph {
+    width: 624px;
+    font-size: var(--body-text-size);
+    line-height: 150%;
+    font-weight: 500;
+    text-align: justify;
+    text-indent: 1px;
+    display: inline-block;
+    max-height: 270px;
+    word-break: break-word;
+  }
+  .parent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    min-width: 406px;
+    max-width: 100%;
+  }
+  .hero-image-icon {
+    width: 508px;
+    position: relative;
+    border-radius: var(--br-5xs);
+    max-height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    max-width: 100%;
+  }
+  .about,
+  .frame-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    color: var(--color-black);
+    font-family: var(--title);
+  }
+  .frame-group {
+    align-self: stretch;
+    flex-direction: row;
+    gap: 143px;
+    max-width: 100%;
+    font-size: var(--title-size);
+  }
+  .about {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    overflow: hidden;
+    flex-direction: column;
+    padding: 56px 80px 384px;
+    box-sizing: border-box;
+    gap: 136px;
+    line-height: normal;
+    letter-spacing: normal;
+    font-size: var(--body-text-size);
+  }
+  @media screen and (max-width: 1200px) {
+    .hero-image-icon {
+      flex: 1;
+    }
+    .frame-group {
+      flex-wrap: wrap;
+      gap: 71px;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .h1 {
+      font-size: 51px;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .parent {
+      min-width: 100%;
+    }
+    .frame-group {
+      gap: 36px;
+    }
+    .about {
+      gap: 68px;
+      padding-left: var(--padding-21xl);
+      padding-right: var(--padding-21xl);
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .chatify {
+      font-size: var(--small-text-size);
+      line-height: 24px;
+    }
+    .frame-parent {
+      flex-wrap: wrap;
+    }
+    .h1 {
+      font-size: 38px;
+    }
+    .paragraph {
+      font-size: var(--small-text-size);
+      line-height: 24px;
+    }
+    .frame-group {
+      gap: 18px;
+    }
 }
