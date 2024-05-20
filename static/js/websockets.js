@@ -7,7 +7,7 @@ clientWS.onopen = () => {
 
 clientWS.onmessage = (event) => {
     console.log("message recieved: ", event.data)
-    chat_box.textContent = chat_box.textContent + event.data
+    chat_box.innerHTML = chat_box.innerHTML + '<br>' + event.data
 }
 
 window.addEventListener('beforeunload', () => {
@@ -22,7 +22,7 @@ var send_msg_form = document.getElementById("send-message-form")
 htmx.on(send_msg_form, "htmx:afterRequest", () => {
     console.log("message had been sent: ", input_field.value)
     // TODO: make date time appear from the database datestamp, this is unreliable
-    clientWS.send(" " + getCurrentDateTime() + " | " + input_field.value)
+    clientWS.send(getCurrentDateTime() + " | " + input_field.value)
     input_field.value = ""   
 })
 

@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="http://localhost:8085/static/js/htmx.min.js"></script>
+        <script src="static/js/htmx.min.js"></script>
+        <script defer src="static/js/imgchanger.js"></script>
         <title>About Us</title>
-        <link rel="stylesheet" href="http://localhost:8085/static/css/about2.css">
+        <link rel="stylesheet" href="static/css/about2.css">
     </head>
     <body>
-        <h1>
+        <h2>
             О Нас
-        </h1>
-        <h1>
-            В нашем динамично меняющемся мире связь и обмен информацией 
-            становятся все более важными. Онлайн-чат предоставляет возможность 
-            людям из разных уголков мира общаться в реальном времени, делиться мнениями, 
-            идеями и опытом. Онлайн-чат может стать платформой для создания сообщества единомышленников, 
-            объединенных общими интересами. Это может быть как место для неформального общения, 
-            так и площадка для профессионального роста и развития.
-        </h1><br>
+        </h2>
+        <div class="text-container">
+            <h1>
+                В нашем динамично меняющемся мире связь и обмен информацией
+                становятся все более важными. Онлайн-чат предоставляет возможность
+                людям из разных уголков мира общаться в реальном времени, делиться мнениями,
+                идеями и опытом. Онлайн-чат может стать платформой для создания сообщества единомышленников,
+                объединенных общими интересами. Это может быть как место для неформального общения,
+                так и площадка для профессионального роста и развития.
+            </h1>
+            <div class="image-container">
+                <img src="static/imgs/about_img1.jpg" alt="image description" id="image1">
+                <img src="static/imgs/about_img2.jpg" alt="image description" id="image2">
+                <img src="static/imgs/about_img3.png" alt="image description" id="image3">
+            </div>
+        </div>
         <h2>Оставить отзыв</h2>
         <form hx-post="/sendFeedback">
             <input type="text" name="user-feedback" id="user-feedback" required>

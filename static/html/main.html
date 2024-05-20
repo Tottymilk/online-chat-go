@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="http://localhost:8085/static/js/htmx.min.js"></script>
-        <script defer type="text/javascript" src="http://localhost:8085/static/js/websockets.js"></script>
-        <link rel="stylesheet" href="http://localhost:8085/static/css/main2.css">
+        <script src="static/js/htmx.min.js"></script>
+        <script defer type="text/javascript" src="static/js/websockets.js"></script>
+        <link rel="stylesheet" href="static/css/main2.css">
         <title>Online Chat</title>
     </head>
     <body>  
@@ -15,20 +15,22 @@
                 </div>
             </div>
         </div>
+        <h1>Chatify</h1>
         <div class="chatify-container">
-            <h1>Chatify</h1>
-            <a href="http://localhost:8085/about">О НАС</a>
-            <div name="chat-box" id="chat-box">
-                <div class="message-box">
-                    <div class="message-date">March 22, 2023</div>
-                    <div class="message-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                  </div>
+            
+            <a href="about">О нас</a>
+            <div class="chat-box" id="chat-box">
+                Welcome!
             </div>
             <br>
             <form hx-post="/sendMessage" id="send-message-form" hx-swap="none">
                 <input type="text" name="user-message" id="user-message" required>
                 <input type="submit" value="send" id="send-message">
-            </form>
+            </form> 
         </div>
+        <footer>
+            &copy; 2024 Chatify
+            <a href="https://vk.com/enjoythelashofthespanking">VK</a>
+        </footer>
     </body>
 </html>
