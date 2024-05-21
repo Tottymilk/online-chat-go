@@ -7,6 +7,7 @@ clientWS.onopen = () => {
 
 clientWS.onmessage = (event) => {
     console.log("message recieved: ", event.data)
+    // WARNING: This is unsafe to html injections
     chat_box.innerHTML = chat_box.innerHTML + '<br>' + event.data
 }
 

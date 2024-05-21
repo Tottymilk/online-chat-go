@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="static/imgs/favicon.ico">
         <script src="static/js/htmx.min.js"></script>
         <script defer src="static/js/imgchanger.js"></script>
-        <title>About Us</title>
+        <title>О нас</title>
         <link rel="stylesheet" href="static/css/about2.css">
+        <link rel="stylesheet" href="static/css/marioui.css">
     </head>
     <body>
+        <div class="striped-background">
+            <div class="orange-layer-container">
+                <div class="orange-layer">
+                    <div class="star-pattern">
+                    </div>
+                </div>
+            </div>
+        </div>
         <h2>
             О Нас
         </h2>
@@ -27,8 +37,13 @@
         </div>
         <h2>Оставить отзыв</h2>
         <form hx-post="/sendFeedback">
-            <input type="text" name="user-feedback" id="user-feedback" required>
-            <input type="submit" value="sendfeed">
+            <input type="text" name="user-email" id="user-email" placeholder="Ваша эл. почта" required>
+            <input type="text" name="user-feedback" id="user-feedback" placeholder="Ваш отзыв" required>
+            <input type="submit" value="Отправить">
         </form>
+        <footer>
+            &copy; 2024 Chatify
+            <a href="https://vk.com/enjoythelashofthespanking">VK</a>
+        </footer>
     </body>
 </html>

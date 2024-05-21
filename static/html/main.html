@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="static/imgs/favicon.ico">
+        <meta name="description" content="Это приложение для чата, где пользователи могут отправлять и получать сообщения в реальном времени.">
+        <meta name="keywords" content="чат, приложение, реальное время, сообщения, анонимный чат, форум, общение, онлайн чат">
         <script src="static/js/htmx.min.js"></script>
         <script defer type="text/javascript" src="static/js/websockets.js"></script>
         <link rel="stylesheet" href="static/css/main2.css">
-        <title>Online Chat</title>
+        <link rel="stylesheet" href="static/css/marioui.css">
+        <title>Chatify</title>
     </head>
     <body>  
         <div class="striped-background">
@@ -20,12 +24,12 @@
             
             <a href="about">О нас</a>
             <div class="chat-box" id="chat-box">
-                Welcome!
+                Welcome to Chatify!
             </div>
             <br>
             <form hx-post="/sendMessage" id="send-message-form" hx-swap="none">
                 <input type="text" name="user-message" id="user-message" required>
-                <input type="submit" value="send" id="send-message">
+                <input type="submit" value="Отправить" id="send-message">
             </form> 
         </div>
         <footer>
