@@ -134,14 +134,13 @@ input[type="submit"]:active {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(to bottom, rgb(233, 157, 15), rgb(255, 193, 79));
+  background: linear-gradient(to bottom, rgb(233, 157, 15), rgb(218, 161, 56));
   margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);;
 }
 
 .navbar-brand {
-  
   color: black;
   font-size: 1rem;
   font-weight: bold;
@@ -150,6 +149,8 @@ input[type="submit"]:active {
 .navbar-links {
   cursor: pointer;
   display: flex;
+  font-size: 1rem;
+  font-weight: bold;
   justify-content: space-evenly;
   align-items: center;
   width: 30%
