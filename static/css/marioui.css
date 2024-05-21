@@ -99,11 +99,17 @@
     align-items: center;
   }
 
+  .footer-links {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width: 5%;
+  }
+
 a {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #000000;
-    position: absolute;
     text-decoration: none;
     top: 20px;
     right: 20px;
@@ -121,3 +127,31 @@ input[type="submit"]:hover {
 input[type="submit"]:active {
     transform: scale(0.9);
 }
+
+.navbar {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgb(233, 157, 15), rgb(255, 193, 79));
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);;
+}
+
+.navbar-brand {
+  
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%
+}
+

@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="icon" href="static/imgs/favicon.ico">
-        <meta name="description" content="Это приложение для чата, где пользователи могут отправлять и получать сообщения в реальном времени.">
+        <meta name="description" content="Это анонимный онлайн чат, где пользователи могут отправлять и получать сообщения в реальном времени.">
         <meta name="keywords" content="чат, приложение, реальное время, сообщения, анонимный чат, форум, общение, онлайн чат">
         <script src="static/js/htmx.min.js"></script>
         <script defer type="text/javascript" src="static/js/websockets.js"></script>
@@ -19,10 +19,18 @@
                 </div>
             </div>
         </div>
-        <h1>Chatify</h1>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                Chatify
+            </div>
+            <div class="navbar-links">
+                <a href="">Чат</a>
+                <a href="about">О нас</a>
+                <a href="rules">Правила</a>
+            </div>
+        </nav>
         <div class="chatify-container">
-            
-            <a href="about">О нас</a>
+    
             <div class="chat-box" id="chat-box">
                 Welcome to Chatify!
             </div>
@@ -34,7 +42,10 @@
         </div>
         <footer>
             &copy; 2024 Chatify
-            <a href="https://vk.com/enjoythelashofthespanking">VK</a>
+            <div class="footer-links">
+                <a href="https://github.com/artyomkorchagin/online-chat-go">GH</a>
+                <a href="https://vk.com/enjoythelashofthespanking">VK</a>
+            </div>
         </footer>
     </body>
 </html>

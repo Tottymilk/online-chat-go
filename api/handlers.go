@@ -19,6 +19,11 @@ func (s *Server) aboutPage(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, nil)
 }
 
+func (s *Server) rulesPage(w http.ResponseWriter, r *http.Request) {
+	tmpl, _ := template.ParseFiles("./static/html/rules.html")
+	tmpl.Execute(w, nil)
+}
+
 func (s *Server) sendMessage(w http.ResponseWriter, r *http.Request) {
 	message := fmt.Sprintf("%s\n", r.PostFormValue("user-message"))
 	fmt.Print(message)

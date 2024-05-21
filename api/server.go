@@ -54,6 +54,7 @@ func (s *Server) Start() error {
 	router := mux.NewRouter()
 	router.HandleFunc("/", s.mainPage)
 	router.HandleFunc("/about", s.aboutPage)
+	router.HandleFunc("/rules", s.rulesPage)
 	router.HandleFunc("/sendMessage", s.sendMessage).Methods("POST")
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	router.Handle("/ws", websocket.Handler(s.HandleWS))
