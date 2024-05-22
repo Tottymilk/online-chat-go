@@ -156,3 +156,27 @@ input[type="submit"]:active {
   width: 30%
 }
 
+@media (max-width: 900px) {
+  .navbar {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .navbar-brand {
+    font-size: 0.8rem;
+  }
+
+  .navbar-links {
+    width: 40%;
+    font-size: 0.8rem;
+  }
+
+  footer {
+    padding: 10px;
+    font-size: xx-small;
+  }
+
+  .footer-links {
+    width: 10%;
+  }
+}

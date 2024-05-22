@@ -1,4 +1,4 @@
-let clientWS = new WebSocket("wss://djtr4d4q-8085.euw.devtunnels.ms/ws")
+let clientWS = new WebSocket("ws://localhost:8085/ws")
 
 
 clientWS.onopen = () => {
